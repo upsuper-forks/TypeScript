@@ -68,6 +68,11 @@ interface WeakMapConstructor {
 }
 declare var WeakMap: WeakMapConstructor;
 
+interface ReadonlyWeakMap<K extends WeakKey, V> {
+    get(key: K): V | undefined;
+    has(key: K): boolean;
+}
+
 interface Set<T> {
     /**
      * Appends a new element with a specified value to the end of the Set.
@@ -127,3 +132,7 @@ interface WeakSetConstructor {
     readonly prototype: WeakSet<WeakKey>;
 }
 declare var WeakSet: WeakSetConstructor;
+
+interface ReadonlyWeakSet<T extends WeakKey> {
+    has(value: T): boolean;
+}
